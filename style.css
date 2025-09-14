@@ -1,0 +1,162 @@
+/* ========================
+   GLOBAL STYLES
+======================== */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* ========================
+   HEADER & FOOTER
+======================== */
+header {
+  background-color: #2270c4; /* fallback color if image doesn't load */
+  background-image: url('Header_pic.jpeg');
+  background-size: cover;      /* make image fill header */
+  background-position: center; /* center image */
+  color: white;
+  text-align: center;
+  padding: 80px 20px;          /* big padding for hero effect */
+}
+
+header h1 {
+  margin: 0 0 10px 0;
+  font-size: 2em;
+}
+
+footer {
+  background-color: #2270c4;   /* only solid color */
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+footer a {
+  color: #ffd;
+  text-decoration: underline;
+}
+
+/* ========================
+   MAIN CONTENT
+======================== */
+main {
+  padding: 10px;
+}
+
+/* Header button */
+.header-button {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #4791d5fe;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.header-button:hover {
+  background-color: #0e77d9fe;
+}
+
+/* Content blocks (image + text sections) */
+.content-block {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.content-block img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+}
+.content-block .text {
+  padding: 15px;
+}
+.content-block h2 {
+  margin-top: 0;
+}
+.content-block p {
+  margin-bottom: 0;
+}
+
+/* ========================
+   RESPONSIVENESS
+======================== */
+@media (min-width: 600px) {
+  /* make content-blocks side-by-side on larger screens */
+  .content-block {
+    flex-direction: row-reverse;
+  }
+  .content-block img {
+    width: 50%;
+  }
+  .content-block .text {
+    width: 50%;
+  }
+  /* old n-blocks rule commented out
+  .n-blocks {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  */
+}
+
+/* ========================
+   FLEXIBLE N-BLOCKS
+======================== */
+.n-blocks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+.n-blocks .block {
+  flex: 1 1 200px; /* grows, shrinks, min 200px */
+  max-width: 250px; /* optional cap */
+  background-color: white;
+  border-radius: 8px;
+  text-align: center;
+  padding: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.n-blocks img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+.n-blocks .text {
+  margin-top: 10px;
+}
+
+.contact-button {
+  display: inline-flex;       /* horizontal layout */
+  align-items: center;        /* vertically center icon and text */
+  padding: 8px 15px;
+  background-color: #4791d5fe;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin: 5px 0;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.contact-button:hover {
+  background-color: #0e77d9fe;
+}
+
+.contact-button .icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px; /* space between icon and text */
+}
